@@ -124,14 +124,14 @@ def vigenere_cipher(message, key):
     '''
     # Replace `pass` with your code.
     # Stay within the function. Only use the parameters as input. The function should return your answer.
-    alphabet=['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
     cipher=[]
     iteration=0
     def shift_by_letter(letter, letter_shift):
         if letter==" ": 
-            return(letter)
+            return letter
         else:
-            return(alphabet[((alphabet.index(letter) + alphabet.index(letter_shift))%26)])
+            return(chr((ord(letter) - ord('A') + (ord(letter_shift)- ord('A')))%26 + ord('A')))
+
     messagelist=list(message)
     keylist=list(key)
 
